@@ -69,7 +69,7 @@ const Index = () => {
           </p>
           <div className="flex items-center justify-center gap-4 text-xl">
             <Icon name="Calendar" size={24} className="text-accent" />
-            <span className="font-semibold">15 июня 2025</span>
+            <span className="font-semibold">1 августа 2026</span>
           </div>
           <Button 
             onClick={() => scrollToSection('rsvp')} 
@@ -181,7 +181,7 @@ const Index = () => {
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <Icon name="Check" size={20} className="text-primary flex-shrink-0 mt-0.5" />
-                      <span>Подтвердите присутствие до 1 июня 2025</span>
+                      <span>Подтвердите присутствие до 1 июля 2026</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Icon name="Check" size={20} className="text-primary flex-shrink-0 mt-0.5" />
@@ -248,7 +248,7 @@ const Index = () => {
             <h2 className="text-5xl md:text-6xl font-bold text-primary mb-4">Подтверждение</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4"></div>
             <p className="text-lg text-muted-foreground">
-              Пожалуйста, сообщите нам о вашем присутствии до 1 июня 2025
+              Пожалуйста, сообщите нам о вашем присутствии до 1 июля 2026
             </p>
           </div>
 
@@ -392,7 +392,7 @@ const Index = () => {
         <div className="container mx-auto text-center">
           <Icon name="Heart" size={32} className="text-primary mx-auto mb-4" />
           <p className="text-lg font-semibold mb-2">Валерия & Алексей</p>
-          <p className="text-muted-foreground">15 июня 2025</p>
+          <p className="text-muted-foreground">1 августа 2026</p>
           <p className="text-sm text-muted-foreground mt-4">С любовью создано для наших дорогих гостей 💕</p>
         </div>
       </footer>
