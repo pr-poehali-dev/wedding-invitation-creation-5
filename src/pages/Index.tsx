@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Countdown from '@/components/Countdown';
+import LocationMap from '@/components/LocationMap';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -14,7 +16,7 @@ const Index = () => {
   const [attending, setAttending] = useState<boolean | null>(null);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!guestName || !email || attending === null) {
       toast({
@@ -25,15 +27,42 @@ const Index = () => {
       return;
     }
 
-    toast({
-      title: "Спасибо за ответ! 💕",
-      description: `Мы ждем вас, ${guestName}!`,
-    });
+    try {
+      const response = await fetch('https://functions.poehali.dev/c7296b27-b3e9-4f0c-8f10-2946978c8eb9', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: guestName,
+          email: email,
+          guestCount: parseInt(guestCount),
+          attending: attending
+        })
+      });
 
-    setGuestName('');
-    setEmail('');
-    setGuestCount('1');
-    setAttending(null);
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: "Спасибо за ответ! 💕",
+          description: `Мы ждем вас, ${guestName}!`,
+        });
+
+        setGuestName('');
+        setEmail('');
+        setGuestCount('1');
+        setAttending(null);
+      } else {
+        throw new Error(data.error || 'Ошибка сохранения');
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: error instanceof Error ? error.message : 'Не удалось отправить ответ',
+        variant: "destructive"
+      });
+    }
   };
 
   const scrollToSection = (id: string) => {
@@ -70,6 +99,9 @@ const Index = () => {
           <div className="flex items-center justify-center gap-4 text-xl">
             <Icon name="Calendar" size={24} className="text-accent" />
             <span className="font-semibold">1 августа 2026</span>
+          </div>
+          <div className="mt-16 max-w-4xl mx-auto">
+            <Countdown />
           </div>
           <Button 
             onClick={() => scrollToSection('rsvp')} 
@@ -200,6 +232,14 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
+
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-primary mb-2">Как добраться</h3>
+              <p className="text-muted-foreground">Мы находимся в самом сердце города</p>
+            </div>
+            <LocationMap />
+          </div>
         </div>
       </section>
 

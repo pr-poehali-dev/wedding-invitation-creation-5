@@ -1,0 +1,42 @@
+{
+  "tests": [
+    {
+      "name": "Test POST RSVP - attending guest",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Петров",
+        "email": "ivan@example.com",
+        "guestCount": 2,
+        "attending": true
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test POST RSVP - not attending guest",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Мария Сидорова",
+        "email": "maria@example.com",
+        "guestCount": 1,
+        "attending": false
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test GET RSVP statistics",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
