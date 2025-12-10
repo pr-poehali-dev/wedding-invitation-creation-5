@@ -61,7 +61,7 @@ const Index = () => {
             <Icon name="Heart" size={48} className="text-primary mx-auto mb-4" />
           </div>
           <h1 className="text-7xl md:text-9xl font-bold text-primary mb-4">
-            Анна & Дмитрий
+            Валерия & Алексей
           </h1>
           <div className="w-32 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-8"></div>
           <p className="text-2xl md:text-3xl text-muted-foreground mb-6 font-light">
@@ -114,7 +114,7 @@ const Index = () => {
                   <p className="text-sm text-muted-foreground mb-4">Весна 2024</p>
                 </div>
                 <p className="text-center text-muted-foreground leading-relaxed">
-                  На закате в парке, где проходили наши первые свидания, Дмитрий опустился на одно колено. Конечно, ответ был "Да!"
+                  На закате в парке, где проходили наши первые свидания, Алексей опустился на одно колено. Конечно, ответ был "Да!"
                 </p>
               </CardContent>
             </Card>
@@ -352,7 +352,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="User" size={28} className="text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Анна</h3>
+                <h3 className="text-xl font-semibold mb-3">Валерия</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p className="flex items-center justify-center gap-2">
                     <Icon name="Phone" size={18} />
@@ -360,7 +360,7 @@ const Index = () => {
                   </p>
                   <p className="flex items-center justify-center gap-2">
                     <Icon name="Mail" size={18} />
-                    anna@example.com
+                    valeria@example.com
                   </p>
                 </div>
               </CardContent>
@@ -371,7 +371,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="User" size={28} className="text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Дмитрий</h3>
+                <h3 className="text-xl font-semibold mb-3">Алексей</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p className="flex items-center justify-center gap-2">
                     <Icon name="Phone" size={18} />
@@ -379,7 +379,7 @@ const Index = () => {
                   </p>
                   <p className="flex items-center justify-center gap-2">
                     <Icon name="Mail" size={18} />
-                    dmitry@example.com
+                    alexey@example.com
                   </p>
                 </div>
               </CardContent>
@@ -391,7 +391,7 @@ const Index = () => {
       <footer className="py-12 px-4 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="container mx-auto text-center">
           <Icon name="Heart" size={32} className="text-primary mx-auto mb-4" />
-          <p className="text-lg font-semibold mb-2">Анна & Дмитрий</p>
+          <p className="text-lg font-semibold mb-2">Валерия & Алексей</p>
           <p className="text-muted-foreground">15 июня 2025</p>
           <p className="text-sm text-muted-foreground mt-4">С любовью создано для наших дорогих гостей 💕</p>
         </div>
